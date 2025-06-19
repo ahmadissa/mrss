@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version = "2.0" xmlns:media = "http://search.yahoo.com/mrss/">
+ <channel>
+ <title>Sample Feed</title>
+ <link></link>
+ <description>Sample Media RSS</description>
+ <item>
+ <title>Item 1</title>
+ <description>Sample Media RSS Item 1</description>
+ <media:content
+ url = "http://server/image1.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ </media:content>
+ </item>
+<item>
+ <title>Item 2</title>
+ <description>Sample Media RSS Item 2</description>
+ <media:content
+ url = "http://server/image2.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ </media:content>
+ </item>
+<item>
+ <title>Item 3</title>
+ <description>Sample Media RSS Item 3</description>
+ <media:content
+ url = "http://server/image3.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ </media:content>
+ </item>
+<item>
+ <title>Item 4</title>
+ <description>Sample Media RSS Item 4</description>
+ <media:content
+ url = "http://server/image2.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ </media:content>
+ </item>
+</channel>
+</rss>

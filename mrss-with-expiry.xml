@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version = "2.0" xmlns:media = "http://search.yahoo.com/mrss/"
+xmlns:dcterms="http://purl.org/dc/terms/">
+ <channel>
+ <title>Sample Feed</title>
+ <link></link>
+ <description>Sample Media RSS</description>
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+ <item>
+<title>Item 1</title>
+ <description>Sample Media RSS Item 1</description>
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+​
+ <media:content
+ url = "http://server/image1.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+ </media:content>
+ </item>
+ <item>
+<title>Item 2</title>
+ <description>Sample Media RSS Item 2</description>
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+​
+ <media:content
+ url = "http://server/image2.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+ </media:content>
+ </item>
+ <item>
+<title>Item 3</title>
+ <description>Sample Media RSS Item 3</description>
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+
+ 
+
+<media:content
+ url = "http://server/image3.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+ </media:content>
+ </item>
+ <item>
+<title>Item 4</title>
+ <description>Sample Media RSS Item 4</description>
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+​
+ <media:content
+ url = "http://server/image2.jpg"
+ type = "image/jpeg"
+ medium = "image"
+ duration = "10">
+ <dcterms:valid>start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF</dcterms:valid>
+​
+ </media:content>
+ </item>
+ </channel>
+</rss>

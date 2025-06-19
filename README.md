@@ -1,12 +1,13 @@
 # MRSS Parser for Go
 
-This is a lightweight Go module to parse **Media RSS (MRSS)** feeds with optional `dcterms:valid` fields and `media:content` elements. It's built using Go’s standard `encoding/xml` package for speed, simplicity, and full control over namespaced elements.
+This is a lightweight Go module to parse **Media RSS (MRSS)** feeds with optional `dcterms:valid` fields and `media:content` elements. It supports both **local files and HTTPS URLs**, and is built using Go’s standard `encoding/xml` package for speed, simplicity, and full control over namespaced elements.
 
 ## 📦 Features
 
 - Parses `<media:content>` elements (with attributes like `url`, `type`, `duration`, etc.)
 - Handles optional `<dcterms:valid>` fields at both item and media level
-- Works with both MRSS feeds that include expiry and those that don’t
+- Accepts both local file paths and HTTPS URLs
+- Fully compatible with feeds containing images, videos, or mixed media
 - Returns Go structs ready for use
 
 ## 📂 Example Feed Supported
@@ -42,11 +43,13 @@ This is a lightweight Go module to parse **Media RSS (MRSS)** feeds with optiona
 import "github.com/yourusername/mrssparser/parser"
 ```
 
-### Step 2: Parse a Feed
+### Step 2: Parse a Local File or HTTPS URL
 
 ```go
-f, _ := os.Open("feed.xml")
-rss, err := parser.ParseMRSS(f)
+rss, err := parser.ParseMRSS("local-file.xml")
+// or
+rss, err = parser.ParseMRSS("https://example.com/feed.xml")
+
 if err != nil {
   log.Fatal(err)
 }
@@ -94,13 +97,18 @@ type MediaContent struct {
 
 ## 🧪 Testing
 
-To test with your own files:
+You can run the built-in tests for local and remote MRSS parsing:
 
 ```bash
-go run main.go simple-media-rss-with-expiry.xml
+go test ./parser
 ```
 
-Or adapt the feed paths as needed.
+This includes:
+- ✅ `mrss-feed-no-expiry.xml`
+- ✅ `mrss-with-expiry.xml`
+- ✅ Remote feeds like:
+  - `https://files.cloud-digitalsignage.com/mrss/mrss-feed-no-expiry.xml`
+  - `https://files.cloud-digitalsignage.com/mrss/mrss-with-expiry.xml`
 
 ---
 
@@ -109,7 +117,3 @@ Or adapt the feed paths as needed.
 MIT — feel free to use and modify as needed.
 
 ---
-
-## ✍️ Author
-
-Ahmad Issa – [EasySignage](https://easysignage.com)
