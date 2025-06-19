@@ -1,3 +1,3 @@
-module github.com/mrss
+module github.com/ahmadissa/mrss
 
 go 1.24.4
