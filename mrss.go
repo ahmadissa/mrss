@@ -29,11 +29,19 @@ type Item struct {
 }
 
 type MediaContent struct {
-	URL      string  `xml:"url,attr"`
-	Type     string  `xml:"type,attr"`
-	Medium   string  `xml:"medium,attr"`
-	Duration string  `xml:"duration,attr"`
-	Valid    *string `xml:"http://purl.org/dc/terms/ valid,omitempty"`
+	URL       string  `xml:"url,attr"`
+	Type      string  `xml:"type,attr"`
+	Medium    string  `xml:"medium,attr"`
+	Duration  string  `xml:"duration,attr"`
+	ChangeKey string  `xml:"change_key,attr,omitempty"`
+	Valid     *string `xml:"http://purl.org/dc/terms/ valid,omitempty"`
+}
+
+func (m MediaContent) GetChangeKey() string {
+	if m.ChangeKey != "" {
+		return m.ChangeKey
+	}
+	return m.URL
 }
 
 // ParseMRSS parses an MRSS XML from a local file path or HTTPS URL
