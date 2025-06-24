@@ -1,6 +1,8 @@
 package parser
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"encoding/xml"
 	"errors"
 	"io"
@@ -38,10 +40,12 @@ type MediaContent struct {
 }
 
 func (m MediaContent) GetChangeKey() string {
+	input := m.URL
 	if m.ChangeKey != "" {
-		return m.URL + m.ChangeKey
+		input += m.ChangeKey
 	}
-	return m.URL
+	hash := md5.Sum([]byte(input))
+	return hex.EncodeToString(hash[:])
 }
 
 // ParseMRSS parses an MRSS XML from a local file path or HTTPS URL
