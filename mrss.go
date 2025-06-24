@@ -39,7 +39,7 @@ type MediaContent struct {
 
 func (m MediaContent) GetChangeKey() string {
 	if m.ChangeKey != "" {
-		return m.ChangeKey
+		return m.URL + m.ChangeKey
 	}
 	return m.URL
 }
