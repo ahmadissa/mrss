@@ -29,6 +29,7 @@ type Item struct {
 	Description   string         `xml:"description" json:"description"`
 	Valid         *string        `xml:"http://purl.org/dc/terms/ valid,omitempty" json:"valid,omitempty"`
 	MediaContents []MediaContent `xml:"http://search.yahoo.com/mrss/ content" json:"mediaContents"`
+	MediaContent  MediaContent   `json:"mediaContent"`
 }
 
 type MediaContent struct {
@@ -105,6 +106,17 @@ func ParseJSONFeed(source string) (*RSS, error) {
 
 	var rss RSS
 	decoder := json.NewDecoder(reader)
-	err = decoder.Decode(&rss)
-	return &rss, err
+	if err := decoder.Decode(&rss); err != nil {
+		return nil, err
+	}
+
+	// Merge MediaContent into MediaContents if needed
+	for i := range rss.Channel.Items {
+		item := &rss.Channel.Items[i]
+		if len(item.MediaContents) == 0 && (item.MediaContent.URL != "") {
+			item.MediaContents = []MediaContent{item.MediaContent}
+		}
+	}
+
+	return &rss, nil
 }
