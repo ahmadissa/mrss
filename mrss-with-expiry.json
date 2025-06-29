@@ -1,0 +1,64 @@
+{
+  "channel": {
+    "title": "Sample Feed",
+    "description": "Sample Media RSS",
+    "items": [
+      {
+        "title": "Item 1",
+        "description": "Sample Media RSS Item 1",
+        "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF",
+        "mediaContents": [
+          {
+            "url": "http://server/image1.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10",
+            "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF"
+          }
+        ]
+      },
+      {
+        "title": "Item 2",
+        "description": "Sample Media RSS Item 2",
+        "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF",
+        "mediaContents": [
+          {
+            "url": "http://server/image2.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10",
+            "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF"
+          }
+        ]
+      },
+      {
+        "title": "Item 3",
+        "description": "Sample Media RSS Item 3",
+        "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF",
+        "mediaContents": [
+          {
+            "url": "http://server/image3.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10",
+            "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF"
+          }
+        ]
+      },
+      {
+        "title": "Item 4",
+        "description": "Sample Media RSS Item 4",
+        "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF",
+        "mediaContents": [
+          {
+            "url": "http://server/image2.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10",
+            "valid": "start=2010-08-01T00:00:00;end=2011-08-01T00:00:00;scheme=W3C-DTF"
+          }
+        ]
+      }
+    ]
+  }
+}

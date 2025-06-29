@@ -109,3 +109,57 @@ func TestParseRemoteMRSSWithoutExpiry(t *testing.T) {
 		}
 	}
 }
+
+func TestParseLocalJSONWithExpiry(t *testing.T) {
+	rss, err := ParseJSONFeed("./mrss-with-expiry.json")
+	if err != nil {
+		t.Fatalf("ParseJSONFeed failed: %v", err)
+	}
+
+	if rss.Channel.Title != "Sample Feed" {
+		t.Errorf("Expected title 'Sample Feed', got '%s'", rss.Channel.Title)
+	}
+
+	if len(rss.Channel.Items) != 4 {
+		t.Errorf("Expected 4 items, got %d", len(rss.Channel.Items))
+	}
+
+	for i, item := range rss.Channel.Items {
+		if item.Valid == nil {
+			t.Errorf("Expected valid in item %d", i+1)
+		}
+		for _, media := range item.MediaContents {
+			if media.URL == "" {
+				t.Errorf("Missing media URL in item %d", i+1)
+			}
+			if media.Valid == nil {
+				t.Errorf("Expected valid in media content %d", i+1)
+			}
+		}
+	}
+}
+
+func TestParseLocalJSONWithoutExpiry(t *testing.T) {
+	rss, err := ParseJSONFeed("./mrss-feed-no-expiry.json")
+	if err != nil {
+		t.Fatalf("ParseJSONFeed failed: %v", err)
+	}
+
+	if len(rss.Channel.Items) != 4 {
+		t.Errorf("Expected 4 items, got %d", len(rss.Channel.Items))
+	}
+
+	for i, item := range rss.Channel.Items {
+		if item.Valid != nil {
+			t.Errorf("Expected no valid in item %d", i+1)
+		}
+		for _, media := range item.MediaContents {
+			if media.URL == "" {
+				t.Errorf("Missing media URL in item %d", i+1)
+			}
+			if media.Valid != nil {
+				t.Errorf("Expected no valid in media content %d", i+1)
+			}
+		}
+	}
+}

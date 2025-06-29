@@ -1,0 +1,56 @@
+{
+  "channel": {
+    "title": "Sample Feed",
+    "description": "Sample Media RSS",
+    "items": [
+      {
+        "title": "Item 1",
+        "description": "Sample Media RSS Item 1",
+        "mediaContents": [
+          {
+            "url": "http://server/image1.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10"
+          }
+        ]
+      },
+      {
+        "title": "Item 2",
+        "description": "Sample Media RSS Item 2",
+        "mediaContents": [
+          {
+            "url": "http://server/image2.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10"
+          }
+        ]
+      },
+      {
+        "title": "Item 3",
+        "description": "Sample Media RSS Item 3",
+        "mediaContents": [
+          {
+            "url": "http://server/image3.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10"
+          }
+        ]
+      },
+      {
+        "title": "Item 4",
+        "description": "Sample Media RSS Item 4",
+        "mediaContents": [
+          {
+            "url": "http://server/image2.jpg",
+            "type": "image/jpeg",
+            "medium": "image",
+            "duration": "10"
+          }
+        ]
+      }
+    ]
+  }
+}
